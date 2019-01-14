@@ -1,0 +1,768 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Administrador de Equipos</title>
+<!--[if lt IE 10]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+      <![endif]-->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<link rel="shortcut icon" type="image/png" href="img/favicon.ico"/>
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,800" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="css/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="css/themify-icons.css">
+<link rel="stylesheet" type="text/css" href="css/fonts/icofont.css">
+<link rel="stylesheet" type="text/css" href="css/component.css">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="stylesheet" type="text/css" href="css/jquery.mCustomScrollbar.css">
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery-ui.min.js"></script>
+<script type="text/javascript" src="js/popper.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/pcoded.min.js"></script>
+<script type="text/javascript" src="js/equipo.js"></script>
+<script type="text/javascript" src="js/funciones.js"></script>
+</head>
+<body>
+<!--div class="theme-loader">
+    <div class="ball-scale">
+    <div class='contain'>
+    <div class="ring"><div class="frame"></div></div>
+    <div class="ring"><div class="frame"></div></div>
+    <div class="ring"><div class="frame"></div></div>
+    <div class="ring"><div class="frame"></div></div>
+    <div class="ring"><div class="frame"></div></div>
+    <div class="ring"><div class="frame"></div></div>
+    <div class="ring"><div class="frame"></div></div>
+    <div class="ring"><div class="frame"></div></div>
+    <div class="ring"><div class="frame"></div></div>
+    <div class="ring"><div class="frame"></div></div>
+</div>
+</div>
+</div-->
+<!--Menu Mobile-->
+<div class="menu-mobile">
+        <p class="text-right">
+            <a id="lnkCerrar" class="close" href="javascript:void(0)"><i class="ti-close"></i></a>
+        </p>
+        <h4 class="sub-title-white">Cat&aacute;logos</h4>
+        <ul class="ul-menu-mobile">
+            <li>
+                <i class="icofont icofont-fork-lift"></i>
+                <a href="tipoEquipo.html">Tipos de equipos</a>
+            </li>
+            <li>
+                <i class="icofont icofont-brand-toyota"></i>
+                <a href="marcaEquipo.html">Marcas de equipos</a>
+            </li>
+            <li>
+                <i class="icofont icofont-excavator"></i>
+                <a href="equipo.html">Equipos</a>
+            </li>
+        </ul>
+        <h4 class="sub-title-white">Configuraci&oacute;n</h4>
+        <ul class="ul-menu-mobile">
+            <li>
+                <i class="icofont icofont-tags"></i>
+                <a href="tipoEstatus.html">Tipos de estatus</a>
+            </li>
+            <li>
+                <i class="icofont icofont-tag"></i>
+                <a href="estatus.html">Estatus</a>
+            </li>
+        </ul>
+        <h4 class="sub-title-white">Administraci&oacute;n</h4>
+        <ul class="ul-menu-mobile">
+            <li>
+                <i class="icofont icofont-users-social"></i>
+                <a href="cliente.html">Clientes</a>
+            </li>
+            <li>
+                <i class="icofont icofont-business-man-alt-2"></i>
+                <a href="proveedor.html">Proveedores</a>
+            </li>
+            <li>
+                <i class="icofont icofont-institution"></i>
+                <a href="sucursal.html">Sucursal</a>
+            </li>
+    </div>
+    <div id="pcoded" class="pcoded">
+        <div class="pcoded-overlay-box"></div>
+        <div class="pcoded-container navbar-wrapper">
+<!--Menu Wide Screen-->
+            <nav class="navbar header-navbar pcoded-header" style="background-color: #fff;">
+                <!--Top de la pagina MENU-->
+                <div class="navbar-wrapper">
+                    <div class="navbar-logo">
+                        <!-- menu top izquierda colapsable -->
+                        <img src="img/cie-equipment.png" />
+                        <a class="mobile-menu" id="mobile-collapse" href="#!">
+                            <i class="ti-menu"></i>
+                        </a>
+                    </div>
+                    <div class="navbar-container container-fluid">
+                        <!-- menu top -->
+                        <ul class="nav-left">
+                            <li>
+                                <div class="sidebar_toggle"><a href="javascript:void(0)"><i class="ti-menu"></i></a></div>
+                            </li>
+                            <li>
+                                <a href="#!" onclick="javascript:toggleFullScreen()">
+                                    <i class="ti-fullscreen"></i>
+                                </a>
+                            </li>
+                            <li class="mega-menu-top">
+                                <a href="#">Catálogos <i class="ti-angle-down"></i></a>
+                                <ul class="show-notification row">
+                                    <li class="col-sm-3">
+                                        <h6 class="mega-menu-title">Equipos</h6>
+                                        <ul class="mega-mailbox">
+                                            <li>
+                                                <a href="tipoEquipo.html" class="media">
+                                                    <div class="media-left"><i class="icofont icofont-fork-lift"></i></div>
+                                                    <div class="media-body">
+                                                        <h5>Tipos de equipos</h5>
+                                                        <small class="text-muted">Tipos de equipos disponibles</small>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="marcaEquipo.html" class="media">
+                                                    <div class="media-left"><i class="icofont icofont-brand-toyota"></i></div>
+                                                    <div class="media-body">
+                                                        <h5>Marcas de equipos</h5>
+                                                        <small class="text-muted">Marcas disponibles</small>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="equipo.html" class="media">
+                                                    <div class="media-left"><i class="icofont icofont-excavator"></i></div>
+                                                    <div class="media-body">
+                                                        <h5>Equipos</h5>
+                                                        <small class="text-muted">Muestra los equipos disponibles para renta/venta</small>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="col-sm-3">
+                                        <h6 class="mega-menu-title">Configuraci&oacute;n</h6>
+                                        <ul class="mega-mailbox">
+                                            <li>
+                                                <a href="tipoEstatus.html" class="media">
+                                                    <div class="media-left"><i class="icofont icofont-tags"></i></div>
+                                                    <div class="media-body">
+                                                        <h5>Tipos de estatus</h5>
+                                                        <small class="text-muted">Tipos de estatus del sistema</small>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="estatus.html" class="media">
+                                                    <div class="media-left"><i class="icofont icofont-tag"></i></div>
+                                                    <div class="media-body">
+                                                        <h5>Estatus</h5>
+                                                        <small class="text-muted">Estatus por tipo agregado</small>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="col-sm-3">
+                                        <h6 class="mega-menu-title">Administraci&oacute;n</h6>
+                                        <ul class="mega-mailbox">
+                                            <li>
+                                                <a href="cliente.html" class="media">
+                                                    <div class="media-left"><i class="icofont icofont-users-social"></i></div>
+                                                    <div class="media-body">
+                                                        <h5>Clientes</h5>
+                                                        <small class="text-muted">Clientes y prospectos</small>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="proveedor.html" class="media">
+                                                    <div class="media-left"><i class="icofont icofont-business-man-alt-2"></i></div>
+                                                    <div class="media-body">
+                                                        <h5>Proveedores</h5>
+                                                        <small class="text-muted">Proveedores de la empresa</small>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="sucursal.html" class="media">
+                                                    <div class="media-left"><i class="icofont icofont-institution"></i></div>
+                                                    <div class="media-body">
+                                                        <h5>Sucursales</h5>
+                                                        <small class="text-muted">Sucursales de la empresa</small>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <ul class="nav-right">
+                            <li class="user-profile header-notification">
+                                <a href="#!">
+                                    <!--img src="../files/assets/images/avatar-4.jpg" class="img-radius" alt="User-Profile-Image">-->
+                                    <span>Hugo Dimas</span>
+                                    <i class="ti-angle-down"></i>
+                                </a>
+                                <ul class="show-notification profile-notification">
+                                    <li>
+                                        <a href="#!">
+                                            <i class="ti-settings"></i> Configuración
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="user-profile.html">
+                                            <i class="ti-user"></i> Perfil
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="auth-normal-sign-in.html">
+                                            <i class="ti-layout-sidebar-left"></i> Salir
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <div class="space-top">&nbsp;</div>
+        <div class="pcoded-inner-content">
+            <div class="main-body">
+                <div class="page-wrapper">
+                    <div class="page-header card">
+                        <h5><i class="icofont icofont-excavator">&nbsp;</i>Equipos</h5>
+                        <span>En este cat&aacute;logo se administran los equipos disponibles para venta/renta</span>
+                    </div>
+                    <div class="page-body">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <ul class="nav nav-tabs md-tabs" role="tablist">
+                                            <li class="nav-item">
+                                                <a class="nav-link active" data-toggle="tab" href="#todos" role="tab">
+                                                    <i class="icofont icofont-listing-number"></i> Todos
+                                                </a>
+                                                <div class="slide"></div>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" data-toggle="tab" href="#alta" role="tab">
+                                                    <i class="icofont icofont-ui-add"></i> Nuevo
+                                                </a>
+                                                <div class="slide"></div>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" data-toggle="tab" href="#actualizar" role="tab">
+                                                    <i class="icofont icofont-ui-edit"></i> Actualizar
+                                                </a>
+                                                <div class="slide"></div>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" data-toggle="tab" href="#baja" role="tab">
+                                                    <i class="icofont icofont-ui-delete"></i> Baja
+                                                </a>
+                                                <div class="slide"></div>
+                                            </li>
+                                        </ul>
+                                        <div class="tab-content card-block">
+                                            <div class="tab-pane active" id="todos" role="tabpanel" aria-expanded="false">
+                                                <p class="m-0">
+                                                    <table class="table table-hover" id="tblTodos">
+                                                        <tbody></tbody>
+                                                    </table>
+                                                </p>
+                                            </div>
+                                            <div class="tab-pane" id="alta" role="tabpanel" aria-expanded="true">
+                                                <form>
+                                                    <div class="form-group row">
+                                                        <div class="col-xl-12">
+                                                            <div class="card widget-card-1">
+                                                                <i class="icofont icofont-file-document bg-c-blue card1-icon"></i>
+                                                                <span class="f-w-600" style="color:#4680ff; padding-right: 20px;">Datos generales</span>
+                                                                <h4 style="padding-right: 20px;">Equipo para renta o venta</h4>
+                                                                <span class="f-left m-t-10 text-muted">
+                                                                    <div class="form-group row">
+                                                                        <label class="col-sm-2 col-form-label">Tipo de equipo</label>
+                                                                        <div class="col-sm-3">
+                                                                            <select id="cboTipoEquipo" class="form-control">
+                                                                                <option value="-1">[ Tipo de equipo ]</option>
+                                                                            </select>
+                                                                        </div>
+                                                                        <label class="col-sm-1 col-form-label">Modelo</label>
+                                                                        <div class="col-sm-2">
+                                                                            <input type="number" class="form-control" id="txtModelo">
+                                                                        </div>
+                                                                        <label class="col-sm-1 col-form-label">Marca</label>
+                                                                        <div class="col-sm-2">
+                                                                            <select id="cboMarca" class="form-control">
+                                                                                <option value="-1">[ Marca ]</option>
+                                                                            </select>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group row">
+                                                                        <label class="col-sm-2 col-form-label">N&uacute;mero econ&oacute;mico</label>
+                                                                        <div class="col-sm-2">
+                                                                            <input type="text" class="form-control" id="txtNumeroEconomico">
+                                                                        </div>
+                                                                        <label class="col-sm-2 col-form-label">Serie</label>
+                                                                        <div class="col-sm-2">
+                                                                            <input type="text" class="form-control" id="txtSerie">
+                                                                        </div>
+                                                                        <label class="col-sm-1 col-form-label text-right">Propio</label>
+                                                                        <div class="col-sm-2 text-center">
+                                                                            <a id="btnPropio" class="btn btn-success btn-icon" onclick="javascript:void(0)">
+                                                                                &nbsp;<i id="iPropio" class="icofont icofont-check txt-white"></i>
+                                                                            </a>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group row">
+                                                                        <label class="col-sm-2 col-form-label">Sucursal</label>
+                                                                        <div class="col-sm-2">
+                                                                            <select id="cboSucursal" class="form-control">
+                                                                                <option value="-1">[ Sucursal ]</option>
+                                                                            </select>
+                                                                        </div>
+                                                                        <label class="col-sm-2 col-form-label">Estatus</label>
+                                                                        <div class="col-sm-2">
+                                                                            <select id="cboEstatus" class="form-control">
+                                                                                <option value="-1">[ Estatus ]</option>
+                                                                            </select>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group row">
+                                                                        <label class="col-sm-1 col-form-label">Manual</label>
+                                                                        <div class="col-sm-3">
+                                                                            <input id="fileManual" type="file" class="form-control">
+                                                                        </div>
+                                                                        <label class="col-sm-1 col-form-label">P&oacute;liza</label>
+                                                                        <div class="col-sm-3">
+                                                                            <input id="filePoliza" type="file" class="form-control">
+                                                                        </div>
+                                                                        <label class="col-sm-1 col-form-label">Pedimento</label>
+                                                                        <div class="col-sm-3">
+                                                                            <input id="filePedimento" type="file" class="form-control">
+                                                                        </div>
+                                                                    </div>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <div class="col-xl-12">
+                                                            <div class="card widget-card-1">
+                                                                <i class="icofont icofont-dollar bg-c-pink card1-icon"></i>
+                                                                <span class="f-w-600" style="color:#FC6180; padding-right: 20px;">Costos</span>
+                                                                <h4 style="padding-right: 20px;">Sugeridos para operaci&oacute;n</h4>
+                                                                <span class="f-left m-t-10 text-muted">
+                                                                    <div class="form-group row">
+                                                                        <label class="col-sm-1 col-form-label">$ hora</label>
+                                                                        <div class="col-sm-2">
+                                                                            <input type="number" class="form-control" id="txtCostoHora">
+                                                                        </div>
+                                                                        <label class="col-sm-1 col-form-label">$ d&iacute;a</label>
+                                                                        <div class="col-sm-2">
+                                                                            <input type="number" class="form-control" id="txtCostoDia">
+                                                                        </div>
+                                                                        <label class="col-sm-1 col-form-label">$ semana</label>
+                                                                        <div class="col-sm-2">
+                                                                            <input type="number" class="form-control" id="txtCostoSemana">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group row">
+                                                                        <label class="col-sm-1 col-form-label">$ quincena</label>
+                                                                        <div class="col-sm-2">
+                                                                            <input type="number" class="form-control" id="txtCostoQuincena">
+                                                                        </div>
+                                                                        <label class="col-sm-1 col-form-label">$ mes</label>
+                                                                        <div class="col-sm-2">
+                                                                            <input type="number" class="form-control" id="txtCostoMes">
+                                                                        </div>
+                                                                    </div>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <div class="col-xl-12">
+                                                            <div class="card widget-card-1">
+                                                                <i class="icofont icofont-ui-clock bg-c-green card1-icon"></i>
+                                                                <span class="f-w-600" style="color:#93BE52; padding-right: 20px;">Tiempos</span>
+                                                                <h4 style="padding-right: 20px;">De operaci&oacute;n y mantenimientos</h4>
+                                                                <span class="f-left m-t-10 text-muted">
+                                                                    <div class="form-group row">
+                                                                        <label class="col-sm-2 col-form-label">Horas de uso</label>
+                                                                        <div class="col-sm-2">
+                                                                            <input type="number" class="form-control" id="txtHorasUso">
+                                                                        </div>
+                                                                        <label class="col-sm-2 col-form-label">Km de uso</label>
+                                                                        <div class="col-sm-2">
+                                                                            <input type="number" class="form-control" id="txtKmUso">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group row">
+                                                                        <label class="col-sm-2 col-form-label">Horas para mantenimento</label>
+                                                                        <div class="col-sm-2">
+                                                                            <input type="number" class="form-control" id="txtHorasUso">
+                                                                        </div>
+                                                                        <label class="col-sm-2 col-form-label">Km para mantenimiento</label>
+                                                                        <div class="col-sm-2">
+                                                                            <input type="number" class="form-control" id="txtKmUso">
+                                                                        </div>
+                                                                    </div>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <button class="btn btn-danger" id="a_Cancelar"><i class="icofont icofont-ban"></i>Cancelar</button> &nbsp;
+                                                        <button class="btn btn-success" id="a_Guardar"><i class="icofont icofont-save"></i>Guardar</button>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                            <div class="tab-pane" id="actualizar" role="tabpanel" aria-expanded="false">
+                                                <form>
+                                                    <div class="form-group row">
+                                                        <label class="col-sm-2 col-form-label text-right">Sucursal</label>
+                                                        <div class="col-sm-2">
+                                                            <select id="s_cboSucursal" class="form-control">
+                                                                <option value="-1">[ Sucursal ]</option>
+                                                            </select>
+                                                        </div>
+                                                        <label class="col-sm-2 col-form-label text-right">N&uacute;mero econ&oacute;mico</label>
+                                                        <div class="col-sm-2">
+                                                            <select id="s_cboEconomico" class="form-control">
+                                                                <option value="-1">[ Numero economico ]</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <div class="col-xl-12">
+                                                            <div class="card widget-card-1">
+                                                                <i class="icofont icofont-file-document bg-c-blue card1-icon"></i>
+                                                                <span class="f-w-600" style="color:#4680ff; padding-right: 20px;">Datos generales</span>
+                                                                <h4 style="padding-right: 20px;">Equipo para renta o venta</h4>
+                                                                <span class="f-left m-t-10 text-muted">
+                                                                    <div class="form-group row">
+                                                                        <label class="col-sm-2 col-form-label">Tipo de equipo</label>
+                                                                        <div class="col-sm-3">
+                                                                            <select id="c_cboTipoEquipo" class="form-control">
+                                                                                <option value="-1">[ Tipo de equipo ]</option>
+                                                                            </select>
+                                                                        </div>
+                                                                        <label class="col-sm-1 col-form-label">Modelo</label>
+                                                                        <div class="col-sm-2">
+                                                                            <input type="number" class="form-control" id="c_Modelo">
+                                                                        </div>
+                                                                        <label class="col-sm-1 col-form-label">Marca</label>
+                                                                        <div class="col-sm-2">
+                                                                            <select id="c_cboMarca" class="form-control">
+                                                                                <option value="-1">[ Marca ]</option>
+                                                                            </select>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group row">
+                                                                        <label class="col-sm-2 col-form-label">N&uacute;mero econ&oacute;mico</label>
+                                                                        <div class="col-sm-2">
+                                                                            <input type="text" class="form-control" id="c_NumeroEconomico">
+                                                                        </div>
+                                                                        <label class="col-sm-2 col-form-label">Serie</label>
+                                                                        <div class="col-sm-2">
+                                                                            <input type="text" class="form-control" id="c_Serie">
+                                                                        </div>
+                                                                        <label class="col-sm-1 col-form-label text-right">Propio</label>
+                                                                        <div class="col-sm-2 text-center">
+                                                                            <a id="btnPropio" class="btn btn-success btn-icon" onclick="javascript:void(0)">
+                                                                                &nbsp;<i id="c_iPropio" class="icofont icofont-check txt-white"></i>
+                                                                            </a>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group row">
+                                                                        <label class="col-sm-2 col-form-label">Sucursal</label>
+                                                                        <div class="col-sm-2">
+                                                                            <select id="c_cboSucursal" class="form-control">
+                                                                                <option value="-1">[ Sucursal ]</option>
+                                                                            </select>
+                                                                        </div>
+                                                                        <label class="col-sm-2 col-form-label">Estatus</label>
+                                                                        <div class="col-sm-2">
+                                                                            <select id="c_cboEstatus" class="form-control">
+                                                                                <option value="-1">[ Estatus ]</option>
+                                                                            </select>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group row">
+                                                                        <label class="col-sm-1 col-form-label">Manual</label>
+                                                                        <div class="col-sm-3">
+                                                                            <input id="c_fileManual" type="file" class="form-control">
+                                                                        </div>
+                                                                        <label class="col-sm-1 col-form-label">P&oacute;liza</label>
+                                                                        <div class="col-sm-3">
+                                                                            <input id="c_filePoliza" type="file" class="form-control">
+                                                                        </div>
+                                                                        <label class="col-sm-1 col-form-label">Pedimento</label>
+                                                                        <div class="col-sm-3">
+                                                                            <input id="c_filePedimento" type="file" class="form-control">
+                                                                        </div>
+                                                                    </div>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <div class="col-xl-12">
+                                                            <div class="card widget-card-1">
+                                                                <i class="icofont icofont-dollar bg-c-pink card1-icon"></i>
+                                                                <span class="f-w-600" style="color:#FC6180; padding-right: 20px;">Costos</span>
+                                                                <h4 style="padding-right: 20px;">Sugeridos para operaci&oacute;n</h4>
+                                                                <span class="f-left m-t-10 text-muted">
+                                                                    <div class="form-group row">
+                                                                        <label class="col-sm-1 col-form-label">$ hora</label>
+                                                                        <div class="col-sm-2">
+                                                                            <input type="number" class="form-control" id="c_CostoHora">
+                                                                        </div>
+                                                                        <label class="col-sm-1 col-form-label">$ d&iacute;a</label>
+                                                                        <div class="col-sm-2">
+                                                                            <input type="number" class="form-control" id="c_CostoDia">
+                                                                        </div>
+                                                                        <label class="col-sm-1 col-form-label">$ semana</label>
+                                                                        <div class="col-sm-2">
+                                                                            <input type="number" class="form-control" id="c_CostoSemana">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group row">
+                                                                        <label class="col-sm-1 col-form-label">$ quincena</label>
+                                                                        <div class="col-sm-2">
+                                                                            <input type="number" class="form-control" id="c_CostoQuincena">
+                                                                        </div>
+                                                                        <label class="col-sm-1 col-form-label">$ mes</label>
+                                                                        <div class="col-sm-2">
+                                                                            <input type="number" class="form-control" id="c_CostoMes">
+                                                                        </div>
+                                                                    </div>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <div class="col-xl-12">
+                                                            <div class="card widget-card-1">
+                                                                <i class="icofont icofont-ui-clock bg-c-green card1-icon"></i>
+                                                                <span class="f-w-600" style="color:#93BE52; padding-right: 20px;">Tiempos</span>
+                                                                <h4 style="padding-right: 20px;">De operaci&oacute;n y mantenimientos</h4>
+                                                                <span class="f-left m-t-10 text-muted">
+                                                                    <div class="form-group row">
+                                                                        <label class="col-sm-2 col-form-label">Horas de uso</label>
+                                                                        <div class="col-sm-2">
+                                                                            <input type="number" class="form-control" id="c_HorasUso">
+                                                                        </div>
+                                                                        <label class="col-sm-2 col-form-label">Km de uso</label>
+                                                                        <div class="col-sm-2">
+                                                                            <input type="number" class="form-control" id="c_KmUso">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group row">
+                                                                        <label class="col-sm-2 col-form-label">Horas para mantenimento</label>
+                                                                        <div class="col-sm-2">
+                                                                            <input type="number" class="form-control" id="c_HorasMtto">
+                                                                        </div>
+                                                                        <label class="col-sm-2 col-form-label">Km para mantenimiento</label>
+                                                                        <div class="col-sm-2">
+                                                                            <input type="number" class="form-control" id="c_KmMtto">
+                                                                        </div>
+                                                                    </div>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <button class="btn btn-danger" id="c_Cancelar"><i class="icofont icofont-ban"></i>Cancelar</button> &nbsp;
+                                                        <button class="btn btn-success" id="c_Guardar"><i class="icofont icofont-save"></i>Guardar</button>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                            <div class="tab-pane" id="baja" role="tabpanel" aria-expanded="false">
+                                                <form>
+                                                    <div class="form-group row">
+                                                        <label class="col-sm-2 col-form-label text-right">Sucursal</label>
+                                                        <div class="col-sm-2">
+                                                            <select id="sb_cboSucursal" class="form-control">
+                                                                <option value="-1">[ Sucursal ]</option>
+                                                            </select>
+                                                        </div>
+                                                        <label class="col-sm-2 col-form-label text-right">N&uacute;mero econ&oacute;mico</label>
+                                                        <div class="col-sm-2">
+                                                            <select id="sb_cboEconomico" class="form-control">
+                                                                <option value="-1">[ Numero economico ]</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <div class="col-xl-12">
+                                                            <div class="card widget-card-1">
+                                                                <i class="icofont icofont-file-document bg-c-blue card1-icon"></i>
+                                                                <span class="f-w-600" style="color:#4680ff; padding-right: 20px;">Datos generales</span>
+                                                                <h4 style="padding-right: 20px;">Equipo para renta o venta</h4>
+                                                                <span class="f-left m-t-10 text-muted">
+                                                                    <div class="form-group row">
+                                                                        <label class="col-sm-2 col-form-label">Tipo de equipo</label>
+                                                                        <div class="col-sm-3">
+                                                                            <select id="b_cboTipoEquipo" class="form-control" disabled="disabled">
+                                                                                <option value="-1">[ Tipo de equipo ]</option>
+                                                                            </select>
+                                                                        </div>
+                                                                        <label class="col-sm-1 col-form-label">Modelo</label>
+                                                                        <div class="col-sm-2">
+                                                                            <input type="number" class="form-control" id="b_Modelo" disabled="disabled">
+                                                                        </div>
+                                                                        <label class="col-sm-1 col-form-label">Marca</label>
+                                                                        <div class="col-sm-2">
+                                                                            <select id="b_cboMarca" class="form-control" disabled="disabled">
+                                                                                <option value="-1">[ Marca ]</option>
+                                                                            </select>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group row">
+                                                                        <label class="col-sm-2 col-form-label">N&uacute;mero econ&oacute;mico</label>
+                                                                        <div class="col-sm-2">
+                                                                            <input type="text" class="form-control" id="b_NumeroEconomico" disabled="disabled">
+                                                                        </div>
+                                                                        <label class="col-sm-2 col-form-label">Serie</label>
+                                                                        <div class="col-sm-2">
+                                                                            <input type="text" class="form-control" id="b_Serie" disabled="disabled">
+                                                                        </div>
+                                                                        <label class="col-sm-1 col-form-label text-right">Propio</label>
+                                                                        <div class="col-sm-2 text-center">
+                                                                            <a id="btnPropio" class="btn btn-success btn-icon" onclick="javascript:void(0)">
+                                                                                &nbsp;<i id="b_iPropio" class="icofont icofont-check txt-white"></i>
+                                                                            </a>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group row">
+                                                                        <label class="col-sm-2 col-form-label">Sucursal</label>
+                                                                        <div class="col-sm-2">
+                                                                            <select id="b_cboSucursal" class="form-control" disabled="disabled">
+                                                                                <option value="-1">[ Sucursal ]</option>
+                                                                            </select>
+                                                                        </div>
+                                                                        <label class="col-sm-2 col-form-label">Estatus</label>
+                                                                        <div class="col-sm-2">
+                                                                            <select id="b_cboEstatus" class="form-control" disabled="disabled">
+                                                                                <option value="-1">[ Estatus ]</option>
+                                                                            </select>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group row">
+                                                                        <label class="col-sm-1 col-form-label">Manual</label>
+                                                                        <div class="col-sm-3">
+                                                                            <a href="#!" target="_blank" disabled="disabled">documentos/manuales/manual.pdf</a>
+                                                                        </div>
+                                                                        <label class="col-sm-1 col-form-label">P&oacute;liza</label>
+                                                                        <div class="col-sm-3">
+                                                                            <a href="#!" target="_blank" disabled="disabled">documentos/polizas/poliza.pdf</a>
+                                                                        </div>
+                                                                        <label class="col-sm-1 col-form-label">Pedimento</label>
+                                                                        <div class="col-sm-3">
+                                                                            <a href="#!" target="_blank" disabled="disabled">documentos/pedimentos/pedimento.pdf</a>
+                                                                        </div>
+                                                                    </div>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <div class="col-xl-12">
+                                                            <div class="card widget-card-1">
+                                                                <i class="icofont icofont-dollar bg-c-pink card1-icon"></i>
+                                                                <span class="f-w-600" style="color:#FC6180; padding-right: 20px;">Costos</span>
+                                                                <h4 style="padding-right: 20px;">Sugeridos para operaci&oacute;n</h4>
+                                                                <span class="f-left m-t-10 text-muted">
+                                                                    <div class="form-group row">
+                                                                        <label class="col-sm-1 col-form-label">$ hora</label>
+                                                                        <div class="col-sm-2">
+                                                                            <input type="number" class="form-control" id="b_CostoHora" disabled="disabled">
+                                                                        </div>
+                                                                        <label class="col-sm-1 col-form-label">$ d&iacute;a</label>
+                                                                        <div class="col-sm-2">
+                                                                            <input type="number" class="form-control" id="b_CostoDia" disabled="disabled">
+                                                                        </div>
+                                                                        <label class="col-sm-1 col-form-label">$ semana</label>
+                                                                        <div class="col-sm-2">
+                                                                            <input type="number" class="form-control" id="b_CostoSemana" disabled="disabled">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group row">
+                                                                        <label class="col-sm-1 col-form-label">$ quincena</label>
+                                                                        <div class="col-sm-2">
+                                                                            <input type="number" class="form-control" id="b_CostoQuincena" disabled="disabled">
+                                                                        </div>
+                                                                        <label class="col-sm-1 col-form-label">$ mes</label>
+                                                                        <div class="col-sm-2">
+                                                                            <input type="number" class="form-control" id="b_CostoMes" disabled="disabled">
+                                                                        </div>
+                                                                    </div>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <div class="col-xl-12">
+                                                            <div class="card widget-card-1">
+                                                                <i class="icofont icofont-ui-clock bg-c-green card1-icon"></i>
+                                                                <span class="f-w-600" style="color:#93BE52; padding-right: 20px;">Tiempos</span>
+                                                                <h4 style="padding-right: 20px;">De operaci&oacute;n y mantenimientos</h4>
+                                                                <span class="f-left m-t-10 text-muted">
+                                                                    <div class="form-group row">
+                                                                        <label class="col-sm-2 col-form-label">Horas de uso</label>
+                                                                        <div class="col-sm-2">
+                                                                            <input type="number" class="form-control" id="b_HorasUso" disabled="disabled">
+                                                                        </div>
+                                                                        <label class="col-sm-2 col-form-label">Km de uso</label>
+                                                                        <div class="col-sm-2">
+                                                                            <input type="number" class="form-control" id="b_KmUso" disabled="disabled">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group row">
+                                                                        <label class="col-sm-2 col-form-label">Horas para mantenimento</label>
+                                                                        <div class="col-sm-2">
+                                                                            <input type="number" class="form-control" id="b_HorasMtto" disabled="disabled">
+                                                                        </div>
+                                                                        <label class="col-sm-2 col-form-label">Km para mantenimiento</label>
+                                                                        <div class="col-sm-2">
+                                                                            <input type="number" class="form-control" id="b_KmMtto" disabled="disabled">
+                                                                        </div>
+                                                                    </div>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <button class="btn btn-danger" id="b_Cancelar"><i class="icofont icofont-ban"></i>Cancelar</button> &nbsp;
+                                                        <button class="btn btn-success" id="b_Guardar"><i class="icofont icofont-save"></i>Eliminar</button>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
